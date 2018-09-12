@@ -1,7 +1,9 @@
 # stats.rpy
-# Keeps track of and displays the stats for the DSE.
+# Keeps track of and displays the stats.
 #
-# To change styles, look for the dse_stats_* blocks in styles.rpy
+# Styles dictated by the dse_stats_* blocks in styles.rpy
+#
+# Original code by Andrea Baker (Qirien) with modifications.
 
 
 init -100 python:
@@ -29,7 +31,7 @@ init -100 python:
     # var: name of variable to use to keep track of stat.
     # default: starting value for the stat
     # max: maximum value for the stat
-    # hidden: Is this stat hidden from the user? Hidden stats will not be displayed in the stats screen.
+    # Hidden stats will not be displayed in the stats screen.
     def register_stat(name, var, default=0, max=100, hidden=False):
         __dse_stats.append(__Stat(name, var, default, max, hidden))
 
@@ -62,10 +64,11 @@ screen display_stats(name=True, bar=True, value=True, max=True):
         if s.hidden:
             $ dse_stat_length -= 1
     
+    # places stats in upper right corner
     frame:
         style_group "dse_stats"        
         yalign 0.0
-        xalign 0.5
+        xalign 1.0
 
 
         vbox:

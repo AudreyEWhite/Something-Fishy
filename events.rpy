@@ -34,7 +34,7 @@ label oar:
 
 # Character catches a fish
 label fish:
-    $ caught_fish = random.sample(FISH, 1)
+    $ caught_fish = random.sample(FISH, 1) #.decode()
     "I caught a [caught_fish!q]"
     $ fish += 1
     return

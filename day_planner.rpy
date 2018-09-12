@@ -79,7 +79,7 @@ screen display_planner(periods):
                         
                                 if show_this:
                                     if enable:
-                                        textbutton name action SetField(store, this_period.var, curr_val)
+                                        textbutton name action SetField(store, this_period.var, curr_val), Return()
                                     else:
                                         textbutton name
             
@@ -88,10 +88,10 @@ screen display_planner(periods):
 
                             if not valid_choice:
                                 $ can_continue = False
-                                    
-            if (can_continue):
-                textbutton dp_done_title style "dp_done_button" action Return()
-            else:
-                textbutton dp_done_title style "dp_done_button"
+
+            #if (can_continue):
+            #    textbutton dp_done_title style "dp_done_button" action Return()
+            #else:
+            #    textbutton dp_done_title style "dp_done_button"
 
 

@@ -1,5 +1,11 @@
 # This file contains styles for the day planner and stats screen.
 # dictates font and appearance options.
+# Moderately-atlered from source, will be heavily altered.
+
+
+# TODO
+# - create separate types of styles for different buttons
+# - give dp a style parameter so buttons can look different
 
 # Place the day planner.
 style dayplanner_frame:
@@ -14,6 +20,7 @@ style dp_frame:
     
 # Spacing betweeen the choices and the done button.    
 style dp_vbox:
+    background "#ff0000"
     spacing 20
     
 # Vertical spacing between choices
@@ -71,4 +78,4 @@ style dse_stats_value_label:
     
 # Center the stat bar vertically.
 style dse_stats_bar:
-    yalign 0.5
+    yalign 1.0
