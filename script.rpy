@@ -1,47 +1,33 @@
-# Something Fishy
-# A fishing game based on a concept by SquidBiscuit 
+﻿# The script of the game goes in this file.
 
-init python:
-    register_stat("Oar", "oar", 0, 7, True)
-    register_stat("Mutation", "mutation", 0, 100, True)
-    register_stat("Fish", "fish", 0, 200, False)
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
 
-    dp_period("What Now?", "next")
-    dp_choice("Cast", "cast")
-    dp_choice("Row", "row", show="oar > 0") #can only row if oar is available)
-    #If you have an oar
-    #dp_choice("Row left", "left", show="Oar > 0")
-    #dp_choice("Row forward", "forward", show="Oar > 0")
-    #dp_choice("Row right", "right", show="Oar > 0")
-    
+define e = Character("Eileen")
 
-#Start of the game
+
+# The game starts here.
+
 label start:
 
-    $ turns = 0 #initialize time passed in game
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
 
-    scene black #makes background black
+    scene bg room
 
-    jump day
-            
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
 
+    show eileen happy
 
-label day:
-    
-    $ next = None
-    $ turns += 1 #iterate time passing
-    
-    call screen day_planner(["What Now?"])
-    window auto
+    # These display lines of dialogue.
 
-    $ period = "What Now?"
-    $ act = next
+    e "You've created a new Ren'Py game."
 
-    call events_run_period
-    call events_end_day
+    e "Once you add a story, pictures, and music, you can release it to the world!"
 
-    jump day
-    
+    # This ends the game.
 
-
-
+    return
